@@ -23,7 +23,7 @@ public class Resta {
             c = new int[a.length][a[0].length];
             for (int x = 0; x < a.length; x++) {
                 for (int y = 0; y < a[0].length; y++) {
-                    c[x][y] = a[x][y] + b[x][y];
+                    c[x][y] = a[x][y] - b[x][y];
                 }
             }
         System.out.println("Resultado:");
