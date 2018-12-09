@@ -51,16 +51,16 @@ public class MatrizDiv {
     }
     
     public void DivisionMatrices(){
-        for (int i=0; i<=2; i++){
-             for (int j=0; j<=2; j++){
+        for (int i=0; i<filaA; i++){
+             for (int j=0; j<=columnaA; j++){
                  MatrizResul [i][j]= MatrizA[i][j]/MatrizB[i][j];
                 }
             }
     }
     
     public void imprimir(){
-        for (int i=0;i<=2;i++){
-            for (int j=0;j<=2;j++) {
+        for (int i=0; i<filaA;i++){
+            for (int j=0; j<columnaA;j++) {
                 System.out.print(MatrizResul[i][j] + " ");
             }
             System.out.println("");
