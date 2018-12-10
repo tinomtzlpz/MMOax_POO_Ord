@@ -14,61 +14,80 @@ import java.util.Scanner;
  */
 public class MatrizDiv {
     
-     Scanner dato = new Scanner (System.in);
-    private int MatrizA[][];
-    private int MatrizB[][];
-    private int MatrizResul[][];
     
+    private int matrizA[][]; 
+    private int matrizB[][];
+    private int matrizC[][]; // A+B
     
+    private int filas, columnas;
+    private Scanner tec;
     
-    //CONSTRUCTOR
-    public void MatrizDiv(int MatrizA[][], int MatrizB[][]){
-        this.MatrizA=MatrizA;
-        this.MatrizB=MatrizB;
+    //matrizA=new int [filas][columnas];
+    //matrizB=new int [filas][columnas];
+
+    public MatrizDiv(int[][] matrizA, int[][] matrizB, int[][] matrizC, int filas, int columnas, Scanner tec) {
+        this.matrizA = matrizA;
+        this.matrizB = matrizB;
+        this.matrizC = matrizC;
+        this.filas = filas;
+        this.columnas = columnas;
     }
     
     
-    public void LlenarMatrices(){
-        int filaA =MatrizA.length;
-        int columnaA = MatrizA[0].length;
-        int filaB =MatrizB.length;
-        int columnaB = MatrizB[0].length;
-        System.out.println("Datos de la MATRIZ A: ");
-        for (int i=0; i<filaA; i++) {
-            for(int j=0; j<columnaA; j++){
-                System.out.println("Escribir valor " + i + " , " + j + " : ");
-                MatrizA [i][j]=dato.nextInt();
-            }
-        }
+    public void IngresarDatos(){
+
         
-        System.out.println("DATOS DE LA MATRIZ B: " );
-        for(int i=0; i<filaB; i++){
-            for(int j=0; j<columnaB; j++){
-                System.out.println("Escribir valor " + i + " , " + j + " : ");
-                MatrizB [i][j]=dato.nextInt();
+        //ASIGNAMOS CANTIDAD DE FILAS Y COLUMNAS EN AMBAS MATRICES
+        matrizA=new int [filas][columnas];
+        matrizB=new int [filas][columnas];
+        
+        
+        //DATOS MATRIZ A
+        System.out.println("INGRESE LOS ELEMENTOS DE LA MATRIZ A: \n");
+        for(int i=0; i<filas; i++){
+            int f=i+1;
+            for(int j=0; j<columnas; j++){
+                int c=j+1;
+                System.out.println("Igrese el elemento a"+ "["+f+","+c+"]" + "de la matriz A");
+                //System.out.println("Ingrese el elemento a"+ "["+f+"]+"+"["+c+"]" +  " de la matriz A");
+                matrizA[i][j]=tec.nextInt();
+            }
+        }
+        //DATOS MATRIZ B
+        System.out.println("INGRESE LOS ELEMENTOS DE LA MATRIZ B: \n");
+        for(int i=0; i<filas; i++){
+            int f=i+1;
+            for(int j=0; j<columnas; j++){
+                int c=j+1;
+                System.out.println("Igrese el elemento a"+ "["+f+","+c+"]" + "de la matriz B");
+                matrizB[i][j] = tec.nextInt();
             }
         }
     }
     
-    public void DivisionMatrices(){
-         int filaA = 0;
-        for (int i=0; i<filaA; i++){
-             int columnaA = 0;
-             for (int j=0; j<=columnaA; j++){
-                 MatrizResul [i][j]= MatrizA[i][j]/MatrizB[i][j];
-                }
+    public void Suma(){
+        matrizC=new int[filas][columnas];
+        for(int i=0; i<filas; i++){
+            for(int j=0; j<columnas; j++){
+                matrizC[i][j]=matrizA[i][j]/matrizB[i][j];
             }
+        }
     }
-    
-    public void imprimir(){
-         int filaA = 0;
-        for (int i=0; i<filaA;i++){
-             int columnaA = 0;
-            for (int j=0; j<columnaA;j++) {
-                System.out.print(MatrizResul[i][j] + " ");
-            }
+    public void Imprimir(){
+        System.out.println("SUMA DE LAS MATRICES (A+B): ");
+        for(int h=0; h<filas; h++){
             System.out.println("");
-            
+            for(int g=0; g<columnas; g++){
+                System.out.print(matrizC[h][g] + "  ");
+            }
         }
-    }   
+        System.out.println("\n Elementos de la matriz C: \n");
+        for(int i=0; i< filas; i++){
+            int f=i+1;
+                for(int j=0; j< columnas; j++){
+                    int c = j+1;
+                    System.out.println("Elemento c"+"["+f+","+c+"]"+ ": " + matrizC[i][j]);
+                }
+        }
+    }
 }
