@@ -1,4 +1,4 @@
-
+package matrix;
 
 import java.util.Scanner;
 
@@ -25,7 +25,7 @@ public class MatrizDiv {
     //matrizA=new int [filas][columnas];
     //matrizB=new int [filas][columnas];
 
-    public MatrizDiv(int[][] matrizA, int[][] matrizB, int[][] matrizC, int filas, int columnas, Scanner tec) {
+    public MatrizDiv(int[][] matrizA, int[][] matrizB, int[][] matrizC, int filas, int columnas) {
         this.matrizA = matrizA;
         this.matrizB = matrizB;
         this.matrizC = matrizC;

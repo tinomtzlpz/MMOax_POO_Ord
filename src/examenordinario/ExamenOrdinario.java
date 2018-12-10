@@ -5,6 +5,8 @@
  */
 package examenordinario;
 
+import java.io.*;
+
 /**
  *
  * @author tinom
@@ -14,8 +16,11 @@ public class ExamenOrdinario {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // TODO code application logic here
+        Main obj = new Main();
+        obj.Matrices("C:/ejem.txt");
+        
     }
     
 }
