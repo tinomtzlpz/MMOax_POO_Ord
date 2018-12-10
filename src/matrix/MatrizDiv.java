@@ -51,7 +51,9 @@ public class MatrizDiv {
     }
     
     public void DivisionMatrices(){
+         int filaA = 0;
         for (int i=0; i<filaA; i++){
+             int columnaA = 0;
              for (int j=0; j<=columnaA; j++){
                  MatrizResul [i][j]= MatrizA[i][j]/MatrizB[i][j];
                 }
@@ -59,7 +61,9 @@ public class MatrizDiv {
     }
     
     public void imprimir(){
+         int filaA = 0;
         for (int i=0; i<filaA;i++){
+             int columnaA = 0;
             for (int j=0; j<columnaA;j++) {
                 System.out.print(MatrizResul[i][j] + " ");
             }
